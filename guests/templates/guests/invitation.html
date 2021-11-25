@@ -18,7 +18,6 @@
             <p class="invitation-text">
                 y contando ...
             </p>
-        
             <h1>Leticia y Esteban</h1>
             </br>
             <p class="invitation-text">
@@ -29,18 +28,16 @@
                 en el</br>
                 Club de Campo "El Refugio"<br>
                 Valencia 1185, Viña del Mar Alto</br>
-                Viña del Mar</br>
-                Chile
+                Viña del Mar, Chile
             </p>
             </div>
         </section>
         </div>
-        
-
-      
+    
         <section class="col-md-12">
         <form data-toggle="validator" id="invitation-details" class="form-horizontal" method="post">
             <h2 id="rsvp-header" class="text-center">RSVP</h2>
+            <h3 class='text-center'>por favor responder antes del 15.12.2021</h3>
             <div class="clearfix"></div>
             {% csrf_token %}
             {% for guest in party.ordered_guests.all %}
@@ -48,7 +45,7 @@
                 {% with 'attending-'|add:guest.unique_id as attending_label %}
                 <label for="{{ attending_label }}" class="col-sm-3 control-label">{{ guest.name }}</label>
                 <label class="radio-inline">
-                    <input class="attending-radio" type="radio" name="{{ attending_label }}" value="yes" {% if guest.is_attending %}checked="checked"{% endif %} required> asistire con mucho gusto
+                    <input class="attending-radio" type="radio" name="{{ attending_label }}" value="yes" {% if guest.is_attending %}checked="checked"{% endif %} required> asistire
                 </label>
                 <label class="radio-inline">
                     <input class="attending-radio" type="radio" name="{{ attending_label }}" value="no" {% if guest.is_attending == False %}checked="checked"{% endif %} required> no podre asistir
@@ -56,6 +53,12 @@
                 {% endwith %}
             </div>
             {% endfor %}
+             <label class="radio-inline">
+                    <input class="ninos-radio" type="radio" name="{{ attending_label }}" value="yes" {% if guest.is_attending %}checked="checked"{% endif %} required> con niños
+                </label>
+                <label class="radio-inline">
+                    <input class="ninos-radio" type="radio" name="{{ attending_label }}" value="no" {% if guest.is_attending == False %}checked="checked"{% endif %} required> sin niños
+                </label>
             <div class="form-group col-sm-12">
                 <input type="text" name="comments" class="form-control" placeholder="Preguntas/Comentarios" >
             </div>
