@@ -9,7 +9,6 @@ from django.db.models import Count, Q
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView
-from guests import csv_import
 from guests.invitation import get_invitation_context, INVITATION_TEMPLATE, guess_party_by_invite_id_or_404, \
     send_invitation_email
 from guests.models import Guest, Party
@@ -23,7 +22,6 @@ class GuestListView(ListView):
 
 @login_required
 def export_guests(request):
-    export = csv_import.export_guests()
     response = HttpResponse(export.getvalue(), content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=all-guests.csv'
     return response
