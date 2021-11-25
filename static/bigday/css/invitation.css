@@ -1,0 +1,49 @@
+
+#invitation-details, #rsvp-form {
+    margin-top: 2em;
+    padding: 1em;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: .2em solid grey;
+}
+
+
+body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #FFDAB9;
+}
+
+#invitation-header{
+    font-family: 'Pinyon Script', cursive;
+    font-size: 7em;
+    color: #BDB76B;
+}
+
+.invitation-text{
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3em;
+    color: #BDB76B;
+}
+
+.invitation-location{
+    font-size: 1.5em;
+    color: #BDB76B;
+}
+
+#invitation-body {
+    background-color: #fff;
+    padding-bottom: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#footer {
+    padding-bottom: 30px;
+}
