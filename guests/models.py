@@ -30,6 +30,7 @@ class Party(models.Model):
     invitation_opened = models.DateTimeField(null=True, blank=True, default=None)
     is_invited = models.BooleanField(default=False)
     is_attending = models.BooleanField(null=True)
+    ninos =  models.BooleanField(null=True)
     comments = models.TextField(null=True, blank=True)
 
     def __str__(self):

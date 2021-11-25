@@ -54,10 +54,10 @@
             </div>
             {% endfor %}
              <label class="radio-inline">
-                    <input class="ninos-radio" type="radio" name="{{ attending_label }}" value="yes" {% if guest.is_attending %}checked="checked"{% endif %} required> con niños
+                    <input class="ninos-radio" type="radio" name="ninos" value="yes" {% if guest.ninos %}checked="checked"{% endif %} required> con niños
                 </label>
                 <label class="radio-inline">
-                    <input class="ninos-radio" type="radio" name="{{ attending_label }}" value="no" {% if guest.is_attending == False %}checked="checked"{% endif %} required> sin niños
+                    <input class="ninos-radio" type="radio" name="ninos" value="no" {% if guest.ninos == False %}checked="checked"{% endif %} required> sin niños
                 </label>
             <div class="form-group col-sm-12">
                 <input type="text" name="comments" class="form-control" placeholder="Preguntas/Comentarios" >
