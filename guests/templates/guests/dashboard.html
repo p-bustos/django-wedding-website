@@ -75,12 +75,5 @@
                 {% endwith %}
             </div>
         </div>
-        <div class="col-lg-6">
-                <h1>Attending Guests Without Meals</h1>
-                {% with guest_list=guests_without_meals %}
-                    {% include "guests/partials/guest_list.html" %}
-                {% endwith %}
-            </div>
-        </div>
     </div>
 {% endblock %}
