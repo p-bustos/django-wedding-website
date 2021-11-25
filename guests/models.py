@@ -7,9 +7,8 @@ from django.dispatch import receiver
 
 # these will determine the default formality of correspondence
 ALLOWED_TYPES = [
-    ('formal', 'formal'),
-    ('fun', 'fun'),
-    ('dimagi', 'dimagi'),
+    ('Leticia', 'Leticia'),
+    ('Esteban', 'Esteban')
 ]
 
 
@@ -30,8 +29,7 @@ class Party(models.Model):
     invitation_sent = models.DateTimeField(null=True, blank=True, default=None)
     invitation_opened = models.DateTimeField(null=True, blank=True, default=None)
     is_invited = models.BooleanField(default=False)
-    rehearsal_dinner = models.BooleanField(default=False)
-    is_attending = models.NullBooleanField(default=None)
+    is_attending = models.BooleanField(null=True)
     comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
@@ -54,14 +52,6 @@ class Party(models.Model):
         return list(filter(None, self.guest_set.values_list('email', flat=True)))
 
 
-MEALS = [
-    ('beef', 'cow'),
-    ('fish', 'fish'),
-    ('hen', 'hen'),
-    ('vegetarian', 'vegetable'),
-]
-
-
 class Guest(models.Model):
     """
     A single guest
@@ -70,9 +60,8 @@ class Guest(models.Model):
     first_name = models.TextField()
     last_name = models.TextField(null=True, blank=True)
     email = models.TextField(null=True, blank=True)
-    is_attending = models.NullBooleanField(default=None)
-    meal = models.CharField(max_length=20, choices=MEALS, null=True, blank=True)
-    is_child = models.BooleanField(default=False)
+    is_attending = models.BooleanField(null=True)
+    is_child = models.BooleanField(null=True)
 
     @property
     def name(self):
