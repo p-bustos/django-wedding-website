@@ -25,7 +25,7 @@ SECRET_KEY = 'u7!-y4k1c6b44q507nr_l+c^12o7ur++cpzyn!$65w^!gum@h%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['iknorv.pythonanywhere.com']
+ALLOWED_HOSTS = ['iknorv.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join('bigday', 'templates'),
+            os.path.join('bigday/bigday', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
